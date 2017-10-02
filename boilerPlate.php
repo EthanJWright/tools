@@ -141,6 +141,26 @@ Ethan Wright (03/07)\\
 \end{enumerate}
 \end{document}</xmp></code></pre>
 
+
+<h1>Bash</h1>
+<p>Reference for <code>Bash</code>:
+<pre><code><xmp>
+#Sym Link Reference
+ln -sf /originial/file /soft/file  # create soft link
+
+#Find Reference
+find <start dir> -type <f = file | d = dir> -name <file name>
+
+#Do something to every matching file
+for f in $(find *.ext);do <something> ${f};done    
+
+# Template Function
+function_name(){
+  <commands>
+}
+function_name #calls function
+</xmp></code></pre>
+
 <?php
 include("include/footer.php");
 ?>
