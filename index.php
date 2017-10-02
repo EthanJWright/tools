@@ -83,6 +83,11 @@ $("#google").focusout(function(){
   document.getElementById("google").value = "";
 });
 
+function newTab(url){
+  var win = window.open(url);
+  win.focus();
+}
+
 function doGoogle(e){
   var input = document.getElementById('google').value;
   input = input.split(" ");
@@ -91,7 +96,8 @@ function doGoogle(e){
     generate_search += "+" + word;
   });
   if(e.keyCode == 13){
-    location.href = 'http://www.google.com' + generate_search;
+    url = 'http://www.google.com' + generate_search;
+    newTab(url);
   }
 }
 
@@ -109,7 +115,8 @@ function doOverflow(e){
     }
   });
   if(e.keyCode == 13){
-    location.href = 'http://www.stackoverflow.com' + generate_search;
+    url = 'http://www.stackoverflow.com' + generate_search;
+    newTab(url);
   }
 }
 

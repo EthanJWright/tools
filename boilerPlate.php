@@ -29,6 +29,12 @@ include("include/header.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></xmp></pre></code>
 
+<p> Template <code>HTML</code> Form:
+<pre><code><xmp><form action="someFile.php" method="POST">
+  <input name="inputName" type="text">
+  <button class="btn btn-primary" type="submit" value="submit" name="submit"></button>
+</form></xmp></code></pre>
+
 <p> Template DOM manipulation in <code>Javascript</code></p>
 <pre><code>// Modify CSS
 document.getElementById('some id').className += 'added class';
@@ -95,6 +101,45 @@ echo $codeFooter;
     
     def doStuff(self):
         return self.firstVariable + self.secondVariable</code></pre>
+
+<h1>Latex</h1>
+<p>Boilerplate <code>Latex</code> code:
+<pre><code><xmp>\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{forest}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\begin{document}
+
+CSCI 3104 Spring 2017 \hfill Problem Set 7\\
+Ethan Wright (03/07)\\
+
+
+
+\hrulefill
+
+\begin{enumerate}
+
+
+\end{enumerate}
+\end{document}</xmp></code></pre>
 
 <?php
 include("include/footer.php");

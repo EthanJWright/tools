@@ -22,6 +22,7 @@
       <li id="home"><a href="index.php">Home</a></li>
       <li id="boilerplate"><a href="boilerPlate.php">Boilerplate Code</a></li>
       <li id="cheatsheets"><a href="cheatSheets.php">Cheat Sheets</a></li>
+      <li id="formatCode"><a href="formatCode.php">Format Code</a></li>
     </ul>
   </div>
 </nav>
@@ -40,6 +41,9 @@ switch(current_page){
     break;
   case 'cheatSheets.php':
     $('#cheatsheets').addClass('active');
+    break;
+  case 'formatCode.php':
+    $('#formatCode').addClass('active');
     break;
 }
 </script>
