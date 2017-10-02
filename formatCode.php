@@ -10,6 +10,7 @@ include("include/header.php");
   <button type="submit" name="sql" id="sql" class="btn btn-primary">Format SQL</button>
   <button type="submit" name="json" id="json" class="btn btn-primary">Format JSON</button>
   <button type="submit" name="xml" id="xml" class="btn btn-primary">Format XML</button>
+  <button type="submit" name="html" id="html" class="btn btn-primary">Format HTML</button>
 </center>
 </form>
 </br>
@@ -41,6 +42,14 @@ if(isset($_POST)){
     unset($_POST['xml']);
     unset($_POST['code']);
   }
+  if(isset($_POST['html'])){
+    if(count($_POST['code']) > 0){
+      $html = formatHTML($_POST['code']);
+      echo "<pre><code><xmp>$html</xmp></code></pre>";
+    }
+    unset($_POST['html']);
+    unset($_POST['code']);
+  }
 }
 
 function formatXmlString($xml){
@@ -68,6 +77,18 @@ function formatXmlString($xml){
     return $result;
 }
 
+function formatHTML($input){
+  $tidy = new tidy();
+  $config = array(
+    'show-body-only' => true,
+    'indent' => 2,
+    'indent-spaces' => 2,
+    'quiet' => true,
+    'tidy-mark' => true
+  );
+  $clean = $tidy->repairString($input,$config);
+  return $clean;
+}
 
 
 /* https://stackoverflow.com/questions/6054033/pretty-printing-json-with-php  */
