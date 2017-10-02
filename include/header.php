@@ -16,16 +16,25 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
       <a class="navbar-brand" href="#">Dev Tool Kit</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li id="home"><a href="index.php">Home</a></li>
-      <li id="boilerplate"><a href="boilerPlate.php">Boilerplate Code</a></li>
-      <li id="cheatsheets"><a href="cheatSheets.php">Cheat Sheets</a></li>
-      <li id="formatCode"><a href="formatCode.php">Format Code</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li id="home"><a href="index.php">Home</a></li>
+          <li id="boilerplate"><a href="boilerPlate.php">Boilerplate Code</a></li>
+          <li id="cheatsheets"><a href="cheatSheets.php">Cheat Sheets</a></li>
+          <li id="formatCode"><a href="formatCode.php">Format Code</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
+
+
 
 <script>
 var url = window.location.href;

@@ -2,35 +2,35 @@
 include("include/header.php");
 ?>
 
-<table class="table">
-<tr>
-<th>
-    <div class="wrapper">
-        <div class="main-content">
-            <h1 id="date" class="date"></h1>
-            <h3 id="time" class="time"></h3>
-        </div>
-    </div>
-</th>
-<th>
-    <div class="wrapper">
-        <div class="main-content">
-          <p class="date" id="results"></p>
-          <p id="summary" class="time"><p>
-        </div>
-    </div>
-</th>
-</tr>
-<tr>
-<th>
+<div class="tiles">
+<div class="row">
+    <div class="col-md-4 col-xs-12">
+      <div class="wrapper">
+          <div class="main-content">
+              <h1 id="date" class="date"></h1>
+              <h3 id="time" class="time"></h3>
+          </div>
+      </div>
+  </div>
+    <div class="col-md-4 col-xs-12 col-md-offset-2">
+      <div class="wrapper">
+          <div class="main-content">
+            <p class="date" id="results"></p>
+            <p id="summary" class="time"><p>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 col-xs-12">
     <div class="wrapper">
         <div class="main-content">
           <p class="date">Public IP</p>
           <p id="public_ip" class="time"><p>
         </div>
     </div>
-</th>
-<th>
+  </div>
+  <div class="col-md-4 col-xs-12 col-md-offset-2">
     <div class="wrapper">
         <div class="main-content">
           <div class="form-group date">
@@ -42,10 +42,11 @@ include("include/header.php");
           <p id="math_value" class="time"><p>
         </div>
     </div>
-</th>
-</tr>
-<tr>
-<th>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-xs-12">
     <div class="wrapper">
         <div class="main-content">
           <div class="form-group">
@@ -56,8 +57,8 @@ include("include/header.php");
           <input id="google" class="" type="text" onkeypress="return doGoogle(event);" />
         </div>
     </div>
-</th>
-<th>
+  </div>
+  <div class="col-md-4 col-xs-12 col-md-offset-2">
     <div class="wrapper">
         <div class="main-content">
           <div class="form-group">
@@ -68,13 +69,9 @@ include("include/header.php");
           <input id="overflow" class="" type="text" onkeypress="return doOverflow(event);" />
         </div>
     </div>
-</th>
-</tr>
-</table>
-
-
-
-
+  </div>
+</div>
+</div>
 <script>
 $("#overflow").focusout(function(){
   document.getElementById("overflow").value = "";
@@ -205,14 +202,7 @@ input[type="submit"]:hover {
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     color: #222;
 }
-</style>
 
-
-
-
-
-
-<style>
 * {
     margin: 0;
     padding: 0;
