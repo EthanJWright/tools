@@ -208,11 +208,6 @@ input[type="submit"]:hover {
     padding: 0;
 }
 
-body {
-    font-family: lato,sans-serif;
-    color: #bdc3c7;
-}
-
 .wrapper {
     width: 400px;
     margin: 10% auto;
