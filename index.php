@@ -2,7 +2,6 @@
 include("include/header.php");
 ?>
 
-<div class="tiles">
 <div class="row">
     <div class="col-md-4 col-xs-12">
       <div class="wrapper">
@@ -12,8 +11,7 @@ include("include/header.php");
           </div>
       </div>
   </div>
-    <div class="col-md-4 col-xs-12 col-md-offset-2">
-      <div class="wrapper">
+    <div class="col-md-4 col-xs-12 col-md-offset-2"> <div class="wrapper">
           <div class="main-content">
             <p class="date" id="results"></p>
             <p id="summary" class="time"><p>
@@ -71,7 +69,7 @@ include("include/header.php");
     </div>
   </div>
 </div>
-</div>
+
 <script>
 $("#overflow").focusout(function(){
   document.getElementById("overflow").value = "";
@@ -248,9 +246,8 @@ var time = document.getElementById("time");
 function getDate() {
     date.innerHTML = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
 }
-
 function timer() {
-    setTimeout(timer, 1000);
+    setTimeout(timer, 5000);
     var d = new Date();
     var hours = d.getHours();
     var minutes = d.getMinutes();
@@ -259,9 +256,8 @@ function timer() {
                   (minutes < 10 ? "0" + minutes : minutes)
                   ].join(':') + ampm;
     time.innerHTML = strTime;
-    setTimeout(timer, 1000);
+    setTimeout(timer, 5000);
 }
-
 getDate();
 timer();
 
