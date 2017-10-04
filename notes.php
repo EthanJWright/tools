@@ -12,18 +12,46 @@ include("include/header.php");
 </br>
 </br>
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
+<style>
+.note_close{
+  background-color: transparent;
+  border: none;
+  float: right;
+  padding-top: 20px;
+  outline: none;
+}
+</style>
 <script>
 function loadNotes(){
   $("#user_notes").html('');
   var notes = localStorage.getItem("notes");
   if(notes){
     notes = notes.split("{break}");
+    var count = 0;
     notes.forEach(function(element){
       if(element !== null){
-        $('#user_notes').append('<pre><code><xmp>' + element + '</xmp></code></pre>');
+        $('#user_notes').append('<button onclick="removeNote(' + count + ');" class="material-icons note_close">close</button><pre><code><xmp>' + element + '</xmp></code></pre>');
+        count += 1;
       }
     });
+  }
+}
+
+function removeNote(count){
+  var stored = localStorage.getItem("notes");
+  if(stored !== null){
+    stored = stored.split("{break}");
+    stored.splice(count, 1);
+    if(stored.length > 0){
+      stored = stored.join("{break}");
+      localStorage.setItem("notes", stored);
+    }else{
+      localStorage.removeItem("notes");
+    }
+    loadNotes();
   }
 }
 

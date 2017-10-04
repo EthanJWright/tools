@@ -115,10 +115,6 @@ function doOverflow(e){
   }
 }
 
-function showIP(data){
-  alert(data.ip);
-}
-
 function setWeather(ip_data){
     var url = 'https://api.forecast.io/forecast/14f21b5cf06a634b8b3a1a762b056f9c/' + ip_data.latitude + ',' + ip_data.longitude;
        $.ajax({url:url, dataType:"jsonp"}).then(function(data) {
@@ -131,7 +127,11 @@ $.ajax({
   url: '//freegeoip.net/json/?callback=?',
   dataType: 'json',
   success: function(data){
-    document.getElementById("public_ip").innerHTML = data.ip;
+    if(data.ip.length > 14){
+      document.getElementById("public_ip").innerHTML = data.ip.substring(0, 13) + "...";
+    }else{
+      document.getElementById("public_ip").innerHTML = data.ip;
+    }
     setWeather(data);
   },
   error: function(){
