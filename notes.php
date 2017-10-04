@@ -87,7 +87,7 @@ function saveNote(note){
   var entered = document.getElementById('code').value;
   document.getElementById('code').value = "";
   var stored = localStorage.getItem("notes");
-  if(entered.length > 2){
+  if(entered.length > 0){
     if(stored !== null){
       localStorage.setItem("notes", entered + "{break}" + stored);
     }else{
