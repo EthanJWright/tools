@@ -7,15 +7,43 @@ include("include/header.php");
 </br>
 <center>
   <button name="note" id="note" class="btn btn-primary" onclick="saveNote()">Submit Note</button>
-  <button name="clearAll" id="clearAll" class="btn btn-danger" onclick="clearNotes()">Clear All Notes</button>
+  <button name="clearAll" id="clearAll" class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete">Clear All Notes</button>
 </center>
 </br>
 </br>
+
+
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header alert-text">
+                Are you sure you want to delete all notes?
+            </div>
+            <div class="modal-body alert-text">
+              This action cannot be reversed.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger btn-ok" onclick="clearNotes()" data-dismiss="modal">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('#confirm-delete').on('show.bs.modal', function(e) {
+      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+});
+</script>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
 <style>
+.alert-text{
+  color: black !important;
+}
+
 .note_close{
   background-color: transparent;
   border: none;
