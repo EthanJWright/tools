@@ -42,8 +42,8 @@ include("include/header.php");
 <div id="user_notes"></div>
 <script src="functions.js"></script>
 
+<link rel="stylesheet" href="note_style.css">
 </div>
 </body>
-<link rel="stylesheet" href="note_style.css">
-<link rel="stylesheet" href="style.css">
 </html>
+
